@@ -41,7 +41,7 @@
                               | |( )| ||  ___  |   | |   | |      |  ___  || |   | || |   | || | ____ 
                               | || || || (   ) |   | |   | |      | (   ) || |   ) || |   | || | \_  )
                               | () () || )   ( |   | |   | (____/\| )   ( || (__/  )| (___) || (___) |
-                              (_______)|/     \|   )_(   (_______/|/     \|(______/ (_______)(_______) v1.0
+                              (_______)|/     \|   )_(   (_______/|/     \|(______/ (_______)(_______) v1.1
                                                                                                      
 
                                     
@@ -63,10 +63,6 @@ var holySheet = SpreadsheetApp.getActiveSpreadsheet();
 var tab = holySheet.getSheetByName("links-to-observe"); // Substitua "Nome da sua aba" pelo nome da aba que contém seus dados
 var registeredErrors = 0;
 var emailSent = false;
-
-function setUI(){
-  
-}
 
 async function getUrls() {
   var urls = [];
@@ -112,7 +108,6 @@ function verifyStatus(urlsList) {
       //trigger action to send email
       if(registeredErrors > 0 && !emailSent){
           sendMail();
-          console.log("enviou o email")
           emailSent = true;
       }
     }
